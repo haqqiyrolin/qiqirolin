@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My Portfolio</title>
+    <link rel="stylesheet" href="portfolio.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+  </head>
+  <body>
+    <div class="portfolio-container">
+      <div class="header">
+        <h1>Halo <span id="visitorNameDisplay">Pengunjung</span> Selamat datang di PORTOPOLIO Rolin</h1>
+        <a href="index.html" class="logout-button">Logout</a>
+      </div>
+
+      <h2>My Portfolio</h2>
+
+      <img src="portopolio_2.png" alt="About Me" class="portfolio-image" />
+      <img src="portopolio_3.png" alt="Poster Musician" class="portfolio-image" />
+      <img src="portopolio_4.png" alt="Project Design Jersey" class="portfolio-image" />
+      <img src="portopolio_5.png" alt="Project Design Sosmed" class="portfolio-image" />
+      <img src="portopolio_6.png" alt="Terima Kasih" class="portfolio-image" />
+
+      <div class="social-links">
+        <a href="https://www.instagram.com/haqqiyrolin" target="_blank" title="Instagram">
+          <i class="fa-brands fa-instagram"></i>
+        </a>
+
+        <a href="https://wa.me/6281256719509" target="_blank" title="WhatsApp">
+          <i class="fa-brands fa-whatsapp"></i>
+        </a>
+
+        <a href="mailto:haqqiyrolin@gmail.com" title="Email">
+          <i class="fa-solid fa-envelope"></i>
+        </a>
+      </div>
+    </div>
+
+    <script>
+      // Ambil nama dari localStorage
+      const visitorName = localStorage.getItem('visitorName');
+      if (visitorName) {
+        document.getElementById('visitorNameDisplay').textContent = visitorName;
+      }
+    </script>
+  </body>
+</html>

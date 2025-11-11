@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portopolio Login</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="main-container">
+        
+        <h2 class="pre-title">Hi this is my</h2>
+        <h1 class="title">PORTOPOLIO</h1>
+
+        <div class="login-box">
+            
+            <img src="profil.png" alt="Foto Profil" class="profile-pic">
+
+            <form class="login-form" id="loginForm">
+                <h3 class="welcome-text" style="color: white !important;">Welcome to My Portfolio</h3>
+                
+                <label for="visitorName" class="name-label" style="color: white !important;">Enter Your Name</label>
+                <input type="text" id="visitorName" name="visitorName" required 
+                       placeholder="Type your name here..." 
+                       autocomplete="off">
+
+                <div class="login-status" id="errorMessage"></div>
+
+                <button type="submit" class="login-button">Enter Portfolio</button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('loginForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const visitorName = document.getElementById('visitorName').value.trim();
+            
+            if (visitorName === '') {
+                document.getElementById('errorMessage').innerHTML = 
+                    '<span style="color: #ff6b6b;">Mohon masukkan nama Anda.</span>';
+            } else {
+                // Simpan nama ke localStorage
+                localStorage.setItem('visitorName', visitorName);
+                // Redirect ke portfolio.html
+                window.location.href = 'portfolio.html';
+            }
+        });
+    </script>
+</body>
+</html>

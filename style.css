@@ -1,0 +1,194 @@
+/* Menggunakan Google Font */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700;900&display=swap');
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: #ffffff;
+  color: #333;
+  margin: 0;
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+
+  /* Membuat background grid seperti di gambar */
+  background-image: linear-gradient(to right, #d8d8d8 1px, transparent 1px), linear-gradient(to bottom, #f0f0f0 1px, transparent 1px);
+  background-size: 40px 40px;
+}
+
+.main-container {
+  text-align: center;
+  max-width: 600px;
+  width: 100%;
+}
+
+/* Teks "Hi this is my" */
+.pre-title {
+  font-size: 1.5rem; /* 24px */
+  font-weight: 700;
+  color: #6b0b0b; /* Warna maroon gelap */
+  margin-bottom: -10px;
+}
+
+/* Teks "PORTOPOLIO" */
+.title {
+  font-size: 4rem; /* 64px */
+  font-weight: 900;
+  color: #6b0b0b;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2); /* Drop shadow */
+  margin-top: 0;
+  margin-bottom: 30px;
+  letter-spacing: 2px;
+}
+
+/* Kotak login utama */
+.login-box {
+  background-color: #6b0b0b; /* Warna maroon gelap */
+  border-radius: 25px; /* Membuat sudut melengkung */
+  padding: 25px;
+  display: flex;
+  align-items: center;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  width: 90%;
+  margin: 0 auto;
+}
+/* Foto profil */
+.profile-pic {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%; /* Membuat gambar bundar */
+  object-fit: cover; /* Agar gambar tidak gepeng */
+  border: 3px solid #fff;
+  margin-right: 20px;
+}
+
+/* Form di sebelah kanan foto */
+.login-form {
+  flex-grow: 1; /* Mengisi sisa ruang */
+  text-align: left;
+  color: white !important;
+}
+
+.welcome-text {
+  color: #ffffff !important;
+  font-size: 1.4rem;
+  font-weight: 700;
+  margin: 0 0 20px 0;
+  text-align: center;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+}
+
+.name-label,
+label[for='visitorName'] {
+  color: #ffffff !important;
+  font-size: 0.9rem;
+  margin-top: 10px;
+  display: block;
+  text-align: center;
+  margin-bottom: 10px;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+}
+
+/* Input nama pengunjung */
+input[type='text'] {
+  background: transparent;
+  border: 2px solid #ffffff;
+  border-radius: 20px;
+  color: #ffffff;
+  font-size: 1.1rem;
+  width: 100%;
+  padding: 10px 15px;
+  box-sizing: border-box;
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+input[type='text']::placeholder {
+  color: rgba(255, 255, 255, 0.6);
+}
+
+input[type='text']:focus {
+  outline: none;
+  border-color: #ff6b6b;
+  box-shadow: 0 0 10px rgba(255, 107, 107, 0.3);
+  transform: scale(1.02);
+}
+
+/* Tombol Enter Portfolio */
+.login-button {
+  background-color: #ff6b6b;
+  color: white;
+  border: none;
+  padding: 12px 30px;
+  border-radius: 25px;
+  font-weight: 700;
+  font-size: 1.1rem;
+  cursor: pointer;
+  margin-top: 25px;
+  width: 100%;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.login-button:hover {
+  background-color: #ff8787;
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(255, 107, 107, 0.4);
+}
+
+/* Pesan status login dari PHP */
+.login-status {
+  margin-top: 15px;
+  color: white;
+  font-size: 0.9rem;
+}
+/* === KODE RESPONSIVE === */
+/* Terapkan gaya ini jika lebar layar 768px atau kurang (Tablet/HP) */
+
+@media (max-width: 768px) {
+  body {
+    padding: 10px; /* Beri sedikit padding di layar HP */
+  }
+
+  .pre-title {
+    font-size: 1.2rem;
+  }
+
+  .title {
+    font-size: 2.5rem; /* Kecilkan font judul */
+    letter-spacing: 0;
+  }
+
+  .login-box {
+    flex-direction: column; /* Susun foto dan form ke bawah */
+    width: 100%;
+    box-sizing: border-box; /* Agar padding tidak merusak lebar */
+    padding: 25px;
+  }
+
+  .profile-pic {
+    margin-right: 0; /* Hapus margin kanan di foto */
+    margin-bottom: 20px; /* Beri jarak ke form di bawahnya */
+    width: 70px;
+    height: 70px;
+  }
+
+  .login-form {
+    width: 100%; /* Form mengisi penuh */
+  }
+
+  .login-button {
+    float: none; /* Hapus float */
+    width: 100%; /* Buat tombol jadi penuh */
+    box-sizing: border-box;
+    text-align: center;
+    margin-top: 25px;
+  }
+
+  .login-status {
+    text-align: center; /* Tengahkan pesan error/sukses */
+    padding-top: 10px;
+  }
+}

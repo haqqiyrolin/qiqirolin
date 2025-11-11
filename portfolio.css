@@ -1,0 +1,210 @@
+/* Menggunakan Google Font (Opsional) */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap');
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: #ffffff;
+  color: #333;
+  margin: 0;
+  padding: 30px;
+
+  /* Background grid yang sama dengan login */
+  background-image: linear-gradient(to right, #f0f0f0 1px, transparent 1px), linear-gradient(to bottom, #f0f0f0 1px, transparent 1px);
+  background-size: 40px 40px;
+}
+
+.portfolio-container {
+  max-width: 900px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #6b0b0b;
+  color: white;
+  padding: 10px 30px;
+  border-radius: 15px;
+  margin-bottom: 30px;
+}
+
+.header h1 {
+  font-size: 1.5rem;
+  margin: 0;
+}
+
+.logout-button {
+  background-color: #e53935;
+  color: white;
+  padding: 10px 20px;
+  text-decoration: none;
+  border-radius: 20px;
+  font-weight: 700;
+  transition: background-color 0.3s ease;
+}
+
+.logout-button:hover {
+  background-color: #c62828;
+}
+
+.portfolio-container h2 {
+  font-size: 2.5rem;
+  color: #6b0b0b;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.portfolio-image {
+  width: 100%;
+  max-width: 800px;
+  height: auto;
+  margin-bottom: 25px;
+  border-radius: 10px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+  border: 5px solid white;
+
+  /* --- TAMBAHKAN BARIS INI --- */
+  /* Ini akan membuat semua perubahan (transform & shadow) berjalan mulus */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+/* === BARU: Gaya untuk Ikon Sosial Media === */
+
+.social-links {
+  text-align: center;
+  margin-top: 40px; /* Jarak dari gambar terakhir */
+  margin-bottom: 20px;
+}
+
+.social-links a {
+  font-size: 2.5rem;
+  color: #6b0b0b;
+  margin: 0 20px;
+  text-decoration: none;
+
+  /* Pastikan baris ini ada untuk animasi mulus */
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+/* Efek hover saat kursor di atas ikon */
+.social-links a:hover {
+  color: #333;
+
+  /* Pastikan baris ini ada untuk efek timbul */
+  transform: scale(1.15);
+}
+/* Efek saat kursor di atas gambar */
+.portfolio-image:hover {
+  /* Membuat gambar sedikit lebih besar (efek timbul/pop) */
+  transform: scale(1.03);
+
+  /* Membuat bayangan lebih gelap dan menyebar, seakan terangkat */
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.25);
+}
+/* === KODE RESPONSIVE === */
+/* Terapkan gaya ini jika lebar layar 768px atau kurang (Tablet/HP) */
+
+@media (max-width: 768px) {
+  body {
+    padding: 15px; /* Kurangi padding body */
+  }
+
+  .header {
+    flex-direction: column; /* Susun header ke bawah */
+    padding: 20px;
+  }
+
+  .header h1 {
+    font-size: 1.2rem; /* Kecilkan font sambutan */
+    text-align: center;
+    margin-bottom: 15px; /* Beri jarak ke tombol */
+  }
+
+  .logout-button {
+    width: 100%;
+    box-sizing: border-box;
+    text-align: center;
+  }
+
+  .portfolio-container h2 {
+    font-size: 2rem; /* Kecilkan font "My Portfolio" */
+  }
+
+  .social-links {
+    margin-top: 20px;
+  }
+
+  .social-links a {
+    font-size: 2rem; /* Kecilkan ikon sosmed */
+    margin: 0 15px; /* Kurangi jarak antar ikon */
+  }
+}
+/* === KODE ANIMASI SAAT MASUK === */
+
+/* 1. Definisikan animasinya (Fade-in dan geser ke atas) */
+@keyframes fadeInUp {
+  from {
+    opacity: 0; /* Mulai dari transparan */
+    transform: translateY(30px); /* Mulai dari 30px ke bawah */
+  }
+  to {
+    opacity: 1; /* Selesai di non-transparan */
+    transform: translateY(0); /* Selesai di posisi asli */
+  }
+}
+
+/* 2. Terapkan animasi ke setiap elemen */
+/* Kita buat semua elemen mulai dari transparan (opacity: 0) 
+   dan akan tetap terlihat setelah animasi selesai (forwards) */
+
+.header {
+  opacity: 0; /* Mulai transparan */
+  animation: fadeInUp 0.7s ease forwards;
+  animation-delay: 0.2s; /* Header muncul pertama */
+}
+
+.portfolio-container h2 {
+  opacity: 0;
+  animation: fadeInUp 0.7s ease forwards;
+  animation-delay: 0.4s; /* Judul "My Portfolio" muncul kedua */
+}
+
+/* Gunakan 'nth-of-type' untuk memilih gambar berdasarkan urutannya.
+   Kita menggunakan 'img.portfolio-image' agar lebih spesifik.
+*/
+
+img.portfolio-image:nth-of-type(1) {
+  opacity: 0;
+  animation: fadeInUp 0.7s ease forwards;
+  animation-delay: 0.6s; /* Gambar 1 */
+}
+
+img.portfolio-image:nth-of-type(2) {
+  opacity: 0;
+  animation: fadeInUp 0.7s ease forwards;
+  animation-delay: 0.8s; /* Gambar 2 */
+}
+
+img.portfolio-image:nth-of-type(3) {
+  opacity: 0;
+  animation: fadeInUp 0.7s ease forwards;
+  animation-delay: 1s; /* Gambar 3 */
+}
+
+img.portfolio-image:nth-of-type(4) {
+  opacity: 0;
+  animation: fadeInUp 0.7s ease forwards;
+  animation-delay: 1.2s; /* Gambar 4 */
+}
+
+img.portfolio-image:nth-of-type(5) {
+  opacity: 0;
+  animation: fadeInUp 0.7s ease forwards;
+  animation-delay: 1.4s; /* Gambar 5 (Terima Kasih) */
+}
+
+.social-links {
+  opacity: 0;
+  animation: fadeInUp 0.7s ease forwards;
+  animation-delay: 1.6s; /* Ikon sosial media muncul terakhir */
+}
